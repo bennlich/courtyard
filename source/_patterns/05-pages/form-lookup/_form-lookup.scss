@@ -1,3 +1,11 @@
+.jcc-alpha-marker {
+  @include u-text(warning);
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: sans-serif;
+  vertical-align: super;
+}
+
 .filter-input-container {
   .srl-filter-input {
     background-position-y: 4px;
