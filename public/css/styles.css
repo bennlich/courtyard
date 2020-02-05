@@ -16706,6 +16706,14 @@ h3.jcc-header-group__title {
   fill: #1b1b1b;
 }
 
+.jcc-alpha-marker {
+  color: #face00 ;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: sans-serif;
+  vertical-align: super;
+}
+
 .filter-input-container .srl-filter-input {
   background-position-y: 4px;
   background-position-x: 0.3rem;
