@@ -14005,6 +14005,10 @@ a:visited {
   display: flex ;
 }
 
+.jcc-hero--viewport-height {
+  min-height: 100vh ;
+}
+
 .jcc-hero--has-background-image {
   color: white ;
 }
@@ -16700,6 +16704,128 @@ h3.jcc-header-group__title {
   height: 1.75rem;
   width: 1.75rem;
   fill: #1b1b1b;
+}
+
+.filter-input-container .srl-filter-input {
+  background-position-y: 4px;
+  background-position-x: 0.3rem;
+  background-size: 1.8rem;
+  background-image: url(../images/icomoon/SVG/search.svg);
+  background-repeat: no-repeat;
+  padding-left: 2.4rem;
+}
+
+.search-results {
+  background: white;
+  border-radius: 4px;
+  margin-top: 20px;
+  color: #333;
+  width: 800px;
+}
+
+.search-results .results-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold ;
+  color: #005ea2 ;
+  font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+}
+
+.search-results .guide-results .guide-result-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-results .guide-results .guide-result-row .guide-result {
+  width: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search-results .guide-results .guide-result-row .guide-result:first-child {
+  border-right: 1px solid #eee;
+}
+
+.search-results .guide-results .guide-result-row .guide-result a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.search-results .guide-results .guide-result-row .guide-result a:hover {
+  text-decoration: underline;
+}
+
+.search-results .guide-results .no-results, .search-results .guide-results .loading {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.search-results .form-results .form-result {
+  border-bottom: 1px solid #eee;
+}
+
+.search-results .form-results .form-result:last-child {
+  border-bottom: none;
+}
+
+.search-results .form-results .form-result .form-result-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.search-results .form-results .form-result .form-result-content .form-number-and-title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.search-results .form-results .form-result .form-result-content .form-number-and-title .form-number {
+  text-transform: uppercase;
+  color: #333;
+  font-size: 12px;
+}
+
+.search-results .form-results .form-result .form-result-content .expand-button {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-size: 1.8rem;
+  background-image: url("../images/icomoon/SVG/remove.svg");
+}
+
+.search-results .form-results .form-result .form-result-content .expand-button[aria-expanded="false"] {
+  background-image: url("../images/icomoon/SVG/add.svg");
+}
+
+.search-results .form-results .form-result .form-result-content:hover .form-title {
+  text-decoration: underline;
+}
+
+.search-results .form-results .form-result .form-links {
+  display: none;
+  padding: 4px 20px 10px 20px;
+}
+
+.search-results .form-results .form-result .form-links.visible {
+  display: block;
+}
+
+.search-results .form-results .no-results, .search-results .form-results .loading {
+  padding: 10px 20px;
+  text-align: center;
 }
 
 .jcc-hero__options-section {
