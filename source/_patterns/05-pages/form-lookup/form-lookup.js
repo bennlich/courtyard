@@ -9,6 +9,25 @@ async function init() {
 
   let render = () => {
     let currentInput = searchInput.value;
+
+    if (currentInput === '') {
+      searchResults.innerHTML = '';
+      return;
+    } else {
+      searchResults.innerHTML = `
+        <div class="results-header">Guides</div>
+        <div class="guide-results">
+          <div class="loading">...</div>
+        </div>
+        <div class="results-header">Forms</div>
+        <div class="form-results">
+          <div class="loading">...</div>
+        </div>
+      `;
+      guideResults = document.querySelector('.guide-results');
+      formResults = document.querySelector('.form-results');
+    }
+
     let matchingGuides = guides.filter((guide) => {
       let allTags = guide.tags.concat(guide.title);
       allTags = _.flatten(allTags.map((t) => t.split(' ')));
