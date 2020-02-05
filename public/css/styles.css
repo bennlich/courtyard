@@ -16721,6 +16721,7 @@ h3.jcc-header-group__title {
   margin-top: 20px;
   color: #333;
   width: 800px;
+  max-width: 100%;
 }
 
 .search-results .results-header {
@@ -16739,6 +16740,9 @@ h3.jcc-header-group__title {
 }
 
 .search-results .guide-results .guide-result-row .guide-result {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
