@@ -121,47 +121,18 @@ async function init() {
   function formResult(form) {
     let formResultEl = document.createElement("div");
     formResultEl.className = "form-result";
-
-    if (form.resources) {
-      formResultEl.innerHTML = `
-        <div class="form-result">
-          <div class="form-result-content">
-            <div class="form-number-and-title">
-              <div class="form-number">${form.id}</div>
-              <div class="form-title">${form.title}</div>
-            </div>
-            <div class="expand-button" aria-expanded="false"></div>
-          </div>
-          <div class="form-links">
-            <a class="usa-button" href="${form.url}" target="_blank">Download</a>
-            ${form.resources.map(formResourceLink)}
-          </div>
-        </div>
-      `;
-      formResultEl.querySelector(".form-result-content").addEventListener("click", e => {
-        let formLinksEl = formResultEl.querySelector(".form-links");
-        let expandButtonEl = formResultEl.querySelector(".expand-button");
-        if (formLinksEl.className.includes("visible")) {
-          formLinksEl.className = "form-links";
-          expandButtonEl.setAttribute("aria-expanded", "false");
-        } else {
-          formLinksEl.className = "form-links visible";
-          expandButtonEl.setAttribute("aria-expanded", "true");
-        }
-      });
-    } else {
-      formResultEl.innerHTML = `
-        <div class="form-result">
-          <a class="form-result-content" href="${form.url}" target="_blank">
-            <div class="form-number-and-title">
-              <div class="form-number">${form.id}</div>
-              <div class="form-title">${form.title}</div>
-            </div>
+    formResultEl.innerHTML = `
+      <div class="form-result">
+        <div class="form-result-content">
+          <a class="form-number-and-title" href="${form.url}" target="_blank">
+            <div class="form-number">${form.id}</div>
+            <div class="form-title">${form.title}</div>
           </a>
+          <a class="usa-button usa-button--outline form-guide-button" href="${form.url}" target="_blank">See form info</a>
+          <a class="usa-button usa-button--outline download-form-button" href="${form.url}" target="_blank">Download form</a>
         </div>
-      `;
-    }
-
+      </div>
+    `;
     return formResultEl;
   }
 

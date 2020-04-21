@@ -24,7 +24,7 @@
   color: #333;
   width: 800px;
   max-width: 100%;
-  
+
   .results-header {
     padding: 10px 20px;
     border-bottom: 1px solid #eee;
@@ -41,7 +41,7 @@
         flex-grow: 1;
         width: 50%;
         box-sizing: border-box;
-        
+
         &:first-child {
           border-right: 1px solid #eee;
         }
@@ -60,7 +60,8 @@
       }
     }
 
-    .no-results, .loading {
+    .no-results,
+    .loading {
       padding: 10px 20px;
       border-bottom: 1px solid #eee;
       text-align: center;
@@ -74,43 +75,46 @@
       &:last-child {
         border-bottom: none;
       }
-      
+
       .form-result-content {
         display: flex;
         align-items: center;
-        text-decoration: none;
         padding: 10px 20px;
-        color: #333;
         cursor: pointer;
 
         .form-number-and-title {
           flex-grow: 1;
+          text-decoration: none;
+          margin-right: 20px;
+          color: #333;
+
           .form-number {
             text-transform: uppercase;
             color: #333;
-            font-size: 12px;
+            font-size: 16px;
           }
-          
+
           .form-title {
-            
+          }
+
+          &:hover {
+            .form-title {
+              text-decoration: underline;
+            }
           }
         }
 
-        .expand-button {
-          width: 1.8rem;
-          height: 1.8rem;
-          background-size: 1.8rem;
-          background-image: url("../images/icomoon/SVG/remove.svg");
-
-          &[aria-expanded="false"] {
-            background-image: url("../images/icomoon/SVG/add.svg");
-          }
+        .form-guide-button,
+        .download-form-button {
+          white-space: nowrap;
         }
 
-        &:hover {
-          .form-title {
-            text-decoration: underline;
-          }
+        .form-guide-button {
+          margin-right: 14px;
+        }
+
+        .download-form-button {
+          margin-right: 0px;
         }
       }
 
@@ -124,7 +128,8 @@
       }
     }
 
-    .no-results, .loading {
+    .no-results,
+    .loading {
       padding: 10px 20px;
       text-align: center;
     }
