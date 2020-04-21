@@ -16772,7 +16772,8 @@ h3.jcc-header-group__title {
   text-decoration: underline;
 }
 
-.search-results .guide-results .no-results, .search-results .guide-results .loading {
+.search-results .guide-results .no-results,
+.search-results .guide-results .loading {
   padding: 10px 20px;
   border-bottom: 1px solid #eee;
   text-align: center;
@@ -16793,9 +16794,7 @@ h3.jcc-header-group__title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-decoration: none;
   padding: 10px 20px;
-  color: #333;
   cursor: pointer;
 }
 
@@ -16803,27 +16802,32 @@ h3.jcc-header-group__title {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  text-decoration: none;
+  margin-right: 20px;
+  color: #333;
 }
 
 .search-results .form-results .form-result .form-result-content .form-number-and-title .form-number {
   text-transform: uppercase;
   color: #333;
-  font-size: 12px;
+  font-size: 16px;
 }
 
-.search-results .form-results .form-result .form-result-content .expand-button {
-  width: 1.8rem;
-  height: 1.8rem;
-  background-size: 1.8rem;
-  background-image: url("../images/icomoon/SVG/remove.svg");
-}
-
-.search-results .form-results .form-result .form-result-content .expand-button[aria-expanded="false"] {
-  background-image: url("../images/icomoon/SVG/add.svg");
-}
-
-.search-results .form-results .form-result .form-result-content:hover .form-title {
+.search-results .form-results .form-result .form-result-content .form-number-and-title:hover .form-title {
   text-decoration: underline;
+}
+
+.search-results .form-results .form-result .form-result-content .form-guide-button,
+.search-results .form-results .form-result .form-result-content .download-form-button {
+  white-space: nowrap;
+}
+
+.search-results .form-results .form-result .form-result-content .form-guide-button {
+  margin-right: 14px;
+}
+
+.search-results .form-results .form-result .form-result-content .download-form-button {
+  margin-right: 0px;
 }
 
 .search-results .form-results .form-result .form-links {
@@ -16835,7 +16839,8 @@ h3.jcc-header-group__title {
   display: block;
 }
 
-.search-results .form-results .no-results, .search-results .form-results .loading {
+.search-results .form-results .no-results,
+.search-results .form-results .loading {
   padding: 10px 20px;
   text-align: center;
 }
