@@ -12,7 +12,7 @@ async function init() {
 
     if (currentInput === "") {
       searchResults.innerHTML = `
-        <div class="results-header">Guides</div>
+        <div class="results-header">How-to instructions for types of court cases</div>
         <div class="guide-results">
           <div class="loading">...</div>
         </div>
@@ -20,7 +20,7 @@ async function init() {
       renderGuides(currentInput);
     } else {
       searchResults.innerHTML = `
-        <div class="results-header">Guides</div>
+        <div class="results-header">How-to instructions for types of court cases</div>
         <div class="guide-results">
           <div class="loading">...</div>
         </div>
@@ -57,10 +57,17 @@ async function init() {
     }
   };
 
+  // If a form has a language letter at the end of its number,
+  // it is not a canonical form--it is a language guide.
+  function isCanonicalForm(form) {
+    let languageLetterRegex = /^(.+)\s([A-Z]+)$/;
+    return !languageLetterRegex.test(form.id);
+  }
+
   let renderForms = currentInput => {
     formResults = document.querySelector(".form-results");
 
-    let matchingForms = forms.filter(form => {
+    let matchingForms = forms.filter(isCanonicalForm).filter(form => {
       let allTags = [form.id, form.title, form.id.replace(/\-/g, "")]
         .concat(form.id.split("-"))
         .concat(form.tags);
@@ -119,16 +126,19 @@ async function init() {
   }
 
   function formResult(form) {
+    let formInfoUrl = `https://epic-forms-jcc-srl.pantheonsite.io/jcc-form/${form.id
+      .toLowerCase()
+      .replace(/\(|\)/g, "")}`;
     let formResultEl = document.createElement("div");
     formResultEl.className = "form-result";
     formResultEl.innerHTML = `
       <div class="form-result">
         <div class="form-result-content">
-          <a class="form-number-and-title" href="${form.url}" target="_blank">
+          <a class="form-number-and-title" href="${formInfoUrl}" target="_blank">
             <div class="form-number">${form.id}</div>
             <div class="form-title">${form.title}</div>
           </a>
-          <a class="usa-button usa-button--outline form-guide-button" href="${form.url}" target="_blank">See form info</a>
+          <a class="usa-button usa-button--outline form-guide-button" href="${formInfoUrl}" target="_blank">See form info</a>
           <a class="usa-button usa-button--outline download-form-button" href="${form.url}" target="_blank">Download form</a>
         </div>
       </div>
